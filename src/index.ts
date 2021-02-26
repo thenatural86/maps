@@ -3,8 +3,9 @@ import { Company } from './Company'
 import { CustomMap } from './CustomMap'
 
 const user = new User()
-const company = new Company()
+// const company = new Company()
 const customMap = new CustomMap('map')
-console.log(customMap)
-console.log(user)
-console.log(company)
+customMap.addUserMaker(user)
+// console.log(customMap)
+// console.log(user)
+// console.log(company)
