@@ -123132,22 +123132,12 @@ function () {
     });
   }
 
-  CustomMap.prototype.addUserMaker = function (user) {
+  CustomMap.prototype.addMaker = function (mappable) {
     new google.maps.Marker({
       map: this.googleMap,
       position: {
-        lat: user.location.lat,
-        lng: user.location.lng
-      }
-    });
-  };
-
-  CustomMap.prototype.addCompanyMarker = function (company) {
-    new google.maps.Marker({
-      map: this.googleMap,
-      position: {
-        lat: company.location.lat,
-        lng: company.location.lng
+        lat: mappable.location.lat,
+        lng: mappable.location.lng
       }
     });
   };
@@ -123155,7 +123145,16 @@ function () {
   return CustomMap;
 }();
 
-exports.CustomMap = CustomMap;
+exports.CustomMap = CustomMap; //   addCompanyMarker(company: Company): void {
+//     new google.maps.Marker({
+//       map: this.googleMap,
+//       position: {
+//         lat: company.location.lat,
+//         lng: company.location.lng,
+//       },
+//     })
+//   }
+// }
 },{}],"src/index.ts":[function(require,module,exports) {
 "use strict";
 
