@@ -123110,6 +123110,7 @@ function () {
 }();
 
 exports.Company = Company;
+google;
 },{"faker":"node_modules/faker/index.js"}],"src/index.ts":[function(require,module,exports) {
 "use strict";
 
