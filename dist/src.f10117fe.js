@@ -123124,7 +123124,7 @@ var CustomMap =
 function () {
   function CustomMap(divId) {
     this.googleMap = new google.maps.Map(document.getElementById(divId), {
-      zoom: 2,
+      zoom: 1.5,
       center: {
         lat: 0,
         lng: 0
@@ -123132,7 +123132,7 @@ function () {
     });
   }
 
-  CustomMap.prototype.addMaker = function (mappable) {
+  CustomMap.prototype.addMarker = function (mappable) {
     new google.maps.Marker({
       map: this.googleMap,
       position: {
@@ -123145,16 +123145,7 @@ function () {
   return CustomMap;
 }();
 
-exports.CustomMap = CustomMap; //   addCompanyMarker(company: Company): void {
-//     new google.maps.Marker({
-//       map: this.googleMap,
-//       position: {
-//         lat: company.location.lat,
-//         lng: company.location.lng,
-//       },
-//     })
-//   }
-// }
+exports.CustomMap = CustomMap;
 },{}],"src/index.ts":[function(require,module,exports) {
 "use strict";
 
@@ -123171,8 +123162,8 @@ var CustomMap_1 = require("./CustomMap");
 var user = new User_1.User();
 var company = new Company_1.Company();
 var customMap = new CustomMap_1.CustomMap('map');
-customMap.addUserMaker(user);
-customMap.addCompanyMarker(company);
+customMap.addMarker(user);
+customMap.addMarker(company);
 },{"./User":"src/User.ts","./Company":"src/Company.ts","./CustomMap":"src/CustomMap.ts"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
