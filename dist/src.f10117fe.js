@@ -123074,6 +123074,10 @@ function () {
     };
   }
 
+  User.prototype.markerContent = function () {
+    return "User Name: " + this.name;
+  };
+
   return User;
 }();
 
@@ -123106,11 +123110,14 @@ function () {
     };
   }
 
+  Company.prototype.markerContent = function () {
+    return "\n    <div>\n    <h1>Company Name: " + this.companyName + "</h1>\n    <h3>Catchphrase : " + this.catchPhase + "</h3>\n    </div>\n    ";
+  };
+
   return Company;
 }();
 
 exports.Company = Company;
-google;
 },{"faker":"node_modules/faker/index.js"}],"src/CustomMap.ts":[function(require,module,exports) {
 "use strict";
 
@@ -123144,7 +123151,7 @@ function () {
     });
     marker.addListener('click', function () {
       var infoWindow = new google.maps.InfoWindow({
-        content: 'Yolo, Imma bet it all!'
+        content: mappable.markerContent()
       });
       infoWindow.open(_this.googleMap, marker);
     });
